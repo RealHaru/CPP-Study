@@ -1,5 +1,6 @@
 #include <iostream>
 #include<iomanip>
+#include <cstring>
 using namespace std;
 
 int main() {
@@ -161,6 +162,76 @@ int main() {
 	{
 		cout << "You have inputed invalid integers.\n";
 	}
+
+	//tests two C-strings for equality with strcmp
+
+	const int SIZE = 40;
+	char firstString[SIZE], secondString[SIZE];
+
+	cout << "Enter a string: ";
+	cin.getline(firstString, SIZE);
+	cout << "Enter another string: ";
+	cin.getline(secondString, SIZE);
+	if (strcmp(firstString, secondString) == 0)
+		cout << "You entered the same string twice.\n";
+	else
+		cout << "The strings are not the same.\n";
+
+	//4.26 uses strcmp to compare string entered by user with valid stereo part numbers
+
+	const double APRICE = 249.0, BPRICE = 299.0;
+	const int SIZE = 9;
+	char partNum[SIZE];
+
+	cout << "The stereo part numbers are: \n";
+	cout << "\tBoom Box, part number S147-29A\n";
+	cout << "\tShelf Model, part number S147 - 29B\n";
+	cout << "Enter the part number of the stereo you wish to purchase: ";
+	cin.width(SIZE);	//Restricts input
+	cin >> partNum;
+	cout << fixed << showpoint << setprecision(2);
+	if (strcmp(partNum, "S147-29A") == 0)
+		cout << "The price is $" << APRICE << endl;
+	else if (strcmp(partNum, "S147-29B") == 0)
+		cout << "The price is $" << BPRICE << endl;
+	else
+		cout << partNum << " is not a valid part number.\n";
+
+	//4.27 return value of strcmp to alphabetically sort two strings entered by the user
+
+	const int SIZE = 30;
+	char name1[SIZE], name2[SIZE];
+
+	cout << "Enter a name (last name first): ";
+	cin.getline(name1, SIZE);
+	cout << "Enter another name: ";
+	cin.getline(name2, SIZE);
+	cout << "Here are the names sorted alphabetically:\n";
+	if (strcmp(name1, name2) < 0)
+		cout << name1 << endl << name2 << endl;
+	else if (strcmp(name1, name2) > 0)
+		cout << name2 << endl << name1 << endl;
+	else
+		cout << "You entered the same name twice!\n";
+
+	//4.29 creating your own if statment using strcmp
+
+	const int SIZ = 20;
+	char iceCream[SIZ];
+
+	cout << "What flabor of ice cream do you like best? ";
+	cout << "Chocolate, Vanilla, or Pralines and Pecan? ";
+	cin.getline(iceCream, SIZ);
+	cout << "Here is the number of fat grams for a half cup serving: \n";
+	
+	if (!strcmp(iceCream, "Chocolate"))
+		cout << "Chocolate : 9 fat grams.\n";
+	else if (!strcmp(iceCream, "Vanilla"))
+		cout << "Vanilla: 10 fat grams.\n";
+	else if (!strcmp(iceCream, "Praline and Pecan"))
+		cout << "Pralines & Pecan: 14 fat grams.\n";
+	else
+		cout << "That's not one of our flabors!\n";
 
 
 
