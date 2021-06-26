@@ -233,6 +233,43 @@ int main() {
 	else
 		cout << "That's not one of our flabors!\n";
 
+	//4.28 calculates a consultant's charges at $50 per hour, for a min. of 5 hours. The ?: operator adjusts hours to 5 if less than 5 hours were worked.
+
+	const double PAY_RATE = 50.0;
+	double hours, charges;
+
+	cout << "How many hors were worked? ";
+	cin >> hours;
+	hours = hours < 5 ? 5 : hours;
+	charges = PAY_RATE * hours;
+	cout << fixed << showpoint << setprecision(2);
+	cout << "The charges are $" << charges << endl;
+
+	//4.30
+
+	int z, population, base, temp, wages;
+
+	x > y ? z = 1 : z = 20;
+
+	population = temp > 45 ? base * 10 : base * 2;
+
+	wages *= hours > 40 ? 1.5 : 1;
+
+	result >= 0 ? cout << "The result is positive.\n" : cout << "The result is negative.\n";
+
+	//4.31
+
+	int j, k, factor;
+
+	if (k > 90)
+		j = 57;
+	else
+		j = 12;
+
+	if (x >= 10)
+		factor = y * 22;
+	else
+		factor = y * 35;
 
 
 
