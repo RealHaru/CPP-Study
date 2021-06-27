@@ -271,6 +271,40 @@ int main() {
 	else
 		factor = y * 35;
 
+	//4.29 switch statement tels the user something he/she already knows, what they entered.
+
+	char choice;
+
+	cout << "Enter A, B, or C: ";
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 'A':	cout << "You entered A.\n";
+		break;
+	case 'B':	cout << "You entered B.\n";
+		break;
+	case 'C':	cout << "You entered c.\n";
+		break;
+	default:	cout << "You did not enter A, B, or C!\n";
+	}
+
+	int modelNum;
+
+	cout << "Our TVs come in three models:\n";
+	cout << "The 100, 200, and 300. Which do you want? ";
+	cin >> modelNum;
+	cout << "That model has the following features:\n";
+	switch (modelNum) {
+
+	case 300:cout << "\tPicture-in-a-picture.\n";
+	case 200:cout << "\tStereo sound.\n";
+	case 100:cout << "\tRemote control.\n";
+		break;
+	default:cout << "You can only choose the 100, 200, or 300.\n";
+	}
+
+
 
 
 	return 0;
