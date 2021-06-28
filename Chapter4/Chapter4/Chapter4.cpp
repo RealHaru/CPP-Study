@@ -223,7 +223,7 @@ int main() {
 	cout << "Chocolate, Vanilla, or Pralines and Pecan? ";
 	cin.getline(iceCream, SIZ);
 	cout << "Here is the number of fat grams for a half cup serving: \n";
-	
+
 	if (!strcmp(iceCream, "Chocolate"))
 		cout << "Chocolate : 9 fat grams.\n";
 	else if (!strcmp(iceCream, "Vanilla"))
@@ -339,7 +339,7 @@ int main() {
 
 	//33
 	double cr, sales;
-	
+
 	if (sales < 10000)
 		cr = .10;
 	else if (sales > 10000 && sales < 15000)
@@ -372,6 +372,48 @@ int main() {
 		cout << "Please input valid values.\n";
 
 	//36
+	if (grade >= 0 && grade <= 100)
+		cout << "The number is valid\n";
+
+	//37
+	if (temp >= -50 && temp <= 150)
+		cout << "This number is valid\n";
+
+	//38
+	if (hours < 0 || hours >80)
+		cout << "The number is not valid\n";
+
+	//39
+	const int SIZE = 20;
+	char title1[SIZE], title2[SIZE];
+
+	cout << "Enter in 2 titles and I will sort them in alphabetical order, enter one then enter the other after: ";
+	cin.getline(title1, SIZE);
+	cin.getline(title2, SIZE);
+	if (strcmp(title1, title2) > 0)
+		cout << title1 << " " << title2 << endl;
+	else
+		cout << title2 << " " << title1 << endl;
+
+	//40
+	int choice;
+
+	cout << "Enter your choice, 1-4: ";
+	cin >> choice;
+
+	switch (choice) {
+	case 1:cout << fixed << showpoint << setprecision(2);
+		break;
+	case 2:
+	case 3:cout << fixed << showpoint << setprecision(4);
+		break;
+	case 4:cout << fixed << showpoint << setprecision(6);
+		break;
+	default:cout << fixed << showpoint << setprecision(8);
+		break;
+	}
+
+	
 
 
 	return 0;
