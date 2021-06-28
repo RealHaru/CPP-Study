@@ -304,7 +304,74 @@ int main() {
 	default:cout << "You can only choose the 100, 200, or 300.\n";
 	}
 
+	//4.32 switch statement in program uses the "fall through" feature to catch both upper and lowercase letters entered by user.
 
+	char feedGrade;
+
+	cout << "Our dog food is available in three grades:\n";
+	cout << "A, B, and C. Which do you want pricing for? ";
+	cin >> feedGrade;
+	switch (feedGrade) {
+	case'a':
+	case'A':	cout << "30 cents per pound.\n";
+		break;
+	case'b':
+	case'B':	cout << "30 cents per pound.\n";
+		break;
+	case'c':
+	case'C':	cout << "30 cents per pound.\n";
+		break;
+	default:	cout << "That is an invalid choice.\n";
+	}
+
+
+	//review
+	//31
+
+	if (y == 0)
+		x = 100;
+
+	//32
+	if (y == 10)
+		x = 0;
+	else
+		x = 1;
+
+	//33
+	double cr, sales;
+	
+	if (sales < 10000)
+		cr = .10;
+	else if (sales > 10000 && sales < 15000)
+		cr = .15;
+	else
+		cr = .20;
+
+	//34
+	int minimum;
+
+	if (x == 12)
+	{
+		minimum++;
+	}
+	if (minimum > 0)
+		hours = 10;
+
+	//35
+	int amount1, amount2;
+
+	cout << "Enter in 2 amounts greater than 10 and less than 100 separated by a space: ";
+	cin >> amount1 >> amount2;
+
+	if (amount1 > 10 && amount2 < 100)
+		if (amount1 > amount2)
+			cout << "Amount 1 was greater\n";
+		else
+			cout << "Amount 2 was greater\n";
+	else
+		cout << "Please input valid values.\n";
+
+	//36
 
 
 	return 0;
