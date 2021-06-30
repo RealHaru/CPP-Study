@@ -13,14 +13,14 @@ int main() {
 	cout << (y > a) << endl;
 
 	int score1, score2, score3;
-	double average;
+	double avg;
 
 	cout << "Enter 3 test scores and I will average them: ";
 	cin >> score1 >> score2 >> score3;
-	average = (score1 + score2 + score3) / 3.0;
+	avg = (score1 + score2 + score3) / 3.0;
 	cout << fixed << showpoint << setprecision(1);
-	cout << "Your average is " << average << endl;
-	if (average > 95)
+	cout << "Your average is " << avg << endl;
+	if (avg > 95)
 		cout << "Congratulations! That's a high score!\n";
 
 	//floating-point round off errors 
@@ -165,9 +165,6 @@ int main() {
 
 	//tests two C-strings for equality with strcmp
 
-	const int SIZE = 40;
-	char firstString[SIZE], secondString[SIZE];
-
 	cout << "Enter a string: ";
 	cin.getline(firstString, SIZE);
 	cout << "Enter another string: ";
@@ -180,14 +177,14 @@ int main() {
 	//4.26 uses strcmp to compare string entered by user with valid stereo part numbers
 
 	const double APRICE = 249.0, BPRICE = 299.0;
-	const int SIZE = 9;
-	char partNum[SIZE];
+	const int S = 9;
+	char partNum[S];
 
 	cout << "The stereo part numbers are: \n";
 	cout << "\tBoom Box, part number S147-29A\n";
 	cout << "\tShelf Model, part number S147 - 29B\n";
 	cout << "Enter the part number of the stereo you wish to purchase: ";
-	cin.width(SIZE);	//Restricts input
+	cin.width(S);	//Restricts input
 	cin >> partNum;
 	cout << fixed << showpoint << setprecision(2);
 	if (strcmp(partNum, "S147-29A") == 0)
@@ -199,13 +196,13 @@ int main() {
 
 	//4.27 return value of strcmp to alphabetically sort two strings entered by the user
 
-	const int SIZE = 30;
-	char name1[SIZE], name2[SIZE];
+	const int L = 30;
+	char name1[L], name2[L];
 
 	cout << "Enter a name (last name first): ";
-	cin.getline(name1, SIZE);
+	cin.getline(name1, L);
 	cout << "Enter another name: ";
-	cin.getline(name2, SIZE);
+	cin.getline(name2, L);
 	cout << "Here are the names sorted alphabetically:\n";
 	if (strcmp(name1, name2) < 0)
 		cout << name1 << endl << name2 << endl;
@@ -247,11 +244,15 @@ int main() {
 
 	//4.30
 
-	int z, population, base, temp, wages;
+	int z, population, base = 1, temp = 46;
+	double wages;
 
 	x > y ? z = 1 : z = 20;
 
 	population = temp > 45 ? base * 10 : base * 2;
+
+	hours = 41;
+	wages = 18;
 
 	wages *= hours > 40 ? 1.5 : 1;
 
@@ -259,7 +260,7 @@ int main() {
 
 	//4.31
 
-	int j, k, factor;
+	int j, k = 0, factor;
 
 	if (k > 90)
 		j = 57;
@@ -338,7 +339,7 @@ int main() {
 		x = 1;
 
 	//33
-	double cr, sales;
+	double cr, sales = 0;
 
 	if (sales < 10000)
 		cr = .10;
@@ -348,7 +349,7 @@ int main() {
 		cr = .20;
 
 	//34
-	int minimum;
+	int minimum = 0;
 
 	if (x == 12)
 	{
@@ -384,24 +385,24 @@ int main() {
 		cout << "The number is not valid\n";
 
 	//39
-	const int SIZE = 20;
-	char title1[SIZE], title2[SIZE];
+	const int LEN = 20;
+	char title1[LEN], title2[LEN];
 
 	cout << "Enter in 2 titles and I will sort them in alphabetical order, enter one then enter the other after: ";
-	cin.getline(title1, SIZE);
-	cin.getline(title2, SIZE);
+	cin.getline(title1, LEN);
+	cin.getline(title2, LEN);
 	if (strcmp(title1, title2) > 0)
 		cout << title1 << " " << title2 << endl;
 	else
 		cout << title2 << " " << title1 << endl;
 
 	//40
-	int choice;
+	int ch;
 
 	cout << "Enter your choice, 1-4: ";
-	cin >> choice;
+	cin >> ch;
 
-	switch (choice) {
+	switch (ch) {
 	case 1:cout << fixed << showpoint << setprecision(2);
 		break;
 	case 2:
@@ -413,8 +414,93 @@ int main() {
 		break;
 	}
 
-	
+	//58 fixed
+	float average;
+	bool perfectScore;
 
+	cout << "Enter your 3 test scores and I will average them: ";
+	cin >> score1 >> score2 >> score3;
+	average = (score1 + score2 + score3) / 3.0f;
+	if (average == 100) 
+		perfectScore = true;
+	cout << "Your average is " << average << endl;
+	if (perfectScore) {
+		cout << "Contratulations!\n";
+		cout << "That's a perfect score.\n";
+		cout << "You deserve a pat on the back!\n";
+	}
+
+	//Programming 
+	//1
+	int number1, number2;
+	cout << "Please enter 2 numbers: ";
+	cin >> number1 >> number2;
+
+	if (number1 != number2)
+		if (number1 > number2)
+			cout << number1 << " is bigger than " << number2 << endl;
+		else
+			cout << number2 << " is bigger than " << number1 << endl;
+	else
+		cout << "Please enter a valid input.\n";
+
+	//2
+	cout << "Enter a number from the range 1 to 10: ";
+	cin >> number1;
+		
+	switch (number1) {
+	case 1:
+		cout << "I\n";
+		break;
+	case 2:
+		cout << "II\n";
+		break;
+	case 3:
+		cout << "III\n";
+		break;
+	case 4:
+		cout << "IV\n";
+		break;
+	case 5:
+		cout << "V\n";
+		break;
+	case 6:
+		cout << "VI\n";
+		break;
+	case 7:
+		cout << "VII\n";
+		break;
+	case 8:
+		cout << "VIII\n";
+		break;
+	case 9:
+		cout << "IX\n";
+		break;
+	case 10:
+		cout << "X\n";
+		break;
+	default:
+		cout << "You have entered an invalid number.\n";
+
+	}
+
+	//3
+	char state[2];
+	cout << "Please enter a state abbreviation: NC, SC, GA, FL, or AL.\n";
+	cin >> state;
+	
+	if (state == "NC")
+		cout << "North Carolina\n";
+	else if (state == "SC")
+		cout << "South Carolina\n";
+	else if (state == "GA")
+		cout << "Georgia\n";
+	else if (state == "FL")
+		cout << "Florida\n";
+	else if (state == "AL")
+		cout << "Alabama\n";
+	else
+		cout << "Invalid input.\n";
 
 	return 0;
 }
